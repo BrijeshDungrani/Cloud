@@ -4,7 +4,7 @@ admin.initializeApp(functions.config().firebase);
 const database = admin.database();
 const rootRef = database.ref("User");
 const nodemailer = require("nodemailer");
-exports.newNodeDetected = functions.database.ref("User/{userId}/Notify")
+exports.sendEmail = functions.database.ref("User/U1/Notify")
     .onUpdate((change, context) => {
       const newval = change.after.val();
       const transporter = nodemailer.createTransport({
